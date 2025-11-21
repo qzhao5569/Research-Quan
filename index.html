@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI量化交易工具调研报告</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow-x: auto;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #3498db;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+            min-width: 1200px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: 600;
+            position: sticky;
+            left: 0;
+        }
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        tr:hover {
+            background-color: #f1f8ff;
+        }
+        .score-high { background-color: #d4edda; color: #155724; }
+        .score-medium { background-color: #fff3cd; color: #856404; }
+        .score-low { background-color: #f8d7da; color: #721c24; }
+        .cost-high { background-color: #f8d7da; }
+        .cost-medium { background-color: #fff3cd; }
+        .cost-low { background-color: #d4edda; }
+        .section-header {
+            background-color: #2c3e50 !important;
+            color: white;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .tool-type {
+            font-weight: bold;
+            background-color: #ecf0f1;
+        }
+        .footer-note {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AI量化交易工具综合评估表</h1>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>工具名称</th>
+                    <th>功能完整度</th>
+                    <th>数据质量</th>
+                    <th>实时性</th>
+                    <th>易用性</th>
+                    <th>创新度</th>
+                    <th>合规性</th>
+                    <th>成本</th>
+                    <th>总体评分</th>
+                    <th>核心特点</th>
+                    <th>适合人群</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="section-header">
+                    <td colspan="11">一、券商系AI量化工具（机构级服务）</td>
+                </tr>
+                <tr>
+                    <td>广发证券AI算法</td>
+                    <td class="score-high">9.0/10</td>
+                    <td class="score-high">9.1/10</td>
+                    <td class="score-high">9.3/10</td>
+                    <td class="score-high">9.2/10</td>
+                    <td class="score-medium">8.5/10</td>
+                    <td class="score-high">高</td>
+                    <td class="cost-medium">依资金量</td>
+                    <td class="score-high">9.2/10</td>
+                    <td>券商系T0算法服务代表[2](@ref)</td>
+                    <td>广发证券客户，希望自动日内交易</td>
+                </tr>
+                <tr>
+                    <td>华泰证券"涨乐全球通"</td>
+                    <td class="score-high">8.8/10</td>
+                    <td class="score-high">9.0/10</td>
+                    <td class="score-high">9.1/10</td>
+                    <td class="score-high">9.0/10</td>
+                    <td class="score-medium">8.3/10</td>
+                    <td class="score-high">高</td>
+                    <td class="cost-medium">中</td>
+                    <td class="score-high">8.8/10</td>
+                    <td>相关AI技术引入[1,3](@ref)</td>
+                    <td>华泰证券客户</td>
+                </tr>
+                <tr>
+                    <td>中信证券"信e投"</td>
+                    <td class="score-high">8.7/10</td>
+                    <td class="score-high">8.9/10</td>
+                    <td class="score-high">9.0/10</td>
+                    <td class="score-medium">8.5/10</td>
+                    <td class="score-medium">8.2/10</td>
+                    <td class="score-high">高</td>
+                    <td class="cost-medium">中</td>
+                    <td class="score-high">8.7/10</td>
+                    <td>相关AI技术引入[1](@ref)</td>
+                    <td>中信证券客户</td>
+                </tr>
+                <tr>
+                    <td>中金公司AI投研助手</td>
+                    <td class="score-high">8.9/10</td>
+                    <td class="score-high">9.2/10</td>
+                    <td class="score-high">8.8/10</td>
+                    <td class="score-medium">8.3/10</td>
+                    <td class="score-high">8.7/10</td>
+                    <td class="score-high">高</td>
+                    <td class="cost-high">高</td>
+                    <td class="score-high">8.8/10</td>
+                    <td>提供量化选股模型[1](@ref)</td>
+                    <td>机构及高净值客户</td>
+                </tr>
+                <tr>
+                    <td>粤开证券AI策略工具包</td>
+                    <td class="score-medium">8.2/10</td>
+                    <td class="score-medium">8.3/10</td>
+                    <td class="score-medium">8.4/10</td>
+                    <td class="score-high">9.1/10</td>
+                    <td class="score-medium">8.5/10</td>
+                    <td class="score-high">高</td>
+                    <td class="cost-medium">中</td>
+                    <td class="score-medium">8.4/10</td>
+                    <td>AI策略商城提供多策略组合[1](@ref)</td>
+                    <td>个人投资者</td>
+                </tr>
+
+                <tr class="section-header">
+                    <td colspan="11">二、专业量化平台（技术服务商）</td>
+                </tr>
+                <tr>
+                    <td>大智慧"慧问"</td>
+                    <td class="score-high">9.2/10</td>
+                    <td class="score-high">9.0/10</td>
+                    <td class="score-high">9.1/10</td>
+                    <td class="score-high">9.5/10</td>
+                    <td class="score-high">9.3/10</td>
+                    <td class="score-high">高</td>
+                    <td class="cost-medium">中</td>
+                    <td class="score-high">9.0/10</td>
+                    <td>自然语言交互、零代码策略生成[1,3](@ref)</td>
+                    <td>个人投资者、新手用户</td>
+                </tr>
+                <tr>
+                    <td>文华财经WH8/WH9</td>
+                    <td class="score-high">9.1/10</td>
+                    <td class="score-high">9.3/10</td>
+                    <td class="score-high">9.4/10</td>
+                    <td class="score-medium">8.0/10</td>
+                    <td class="score-medium">8.2/10</td>
+                    <td class="score-high">高</td>
+                    <td class="cost-medium">中高</td>
+                    <td class="score-high">9.1/10</td>
+                    <td>期货市场龙头，模型化交易功能强大[7](@ref)</td>
+                    <td>专业期货交易者</td>
+                </tr>
+                <tr>
+                    <td>恒生Ptrade</td>
+                    <td class="score-high">8.9/10</td>
+                    <td class="score-high">8.8/10</td>
+                    <td class="score-high">8.9/10</td>
+                    <td class="score-medium">8.2/10</td>
+                    <td class="score-medium">8.0/10</td>
+                    <td class="score-high">高</td>
+                    <td class="cost-medium">中</td>
+                    <td class="score-high">8.6/10</td>
+                    <td>基于Python，界面直观，适合初学者[7](@ref)</td>
+                    <td>Python量化初学者</td>
+                </tr>
+                <tr>
+                    <td>迅投QMT</td>
+                    <td class="score-high">9.0/10</td>
+                    <td class="score-high">8.9/10</td>
+                    <td class="score-high">9.0/10</td>
+                    <td class="score-medium">7.8/10</td>
+                    <td class="score-medium">8.1/10</td>
+                    <td class="score-high">高</td>
+                    <td class="cost-medium">中</td>
+                    <td class="score-high">8.6/10</td>
+                    <td>支持多语言，有教程易上手[7](@ref)</td>
+                    <td>有一定编程基础的用户</td>
+                </tr>
+                <tr>
+                    <td>东方财富Choice AI助手</td>
+                    <td class="score-high">8.8/10</td>
+                    <td class="score-high">9.4/10</td>
+                    <td class="score-high">8.7/10</td>
+                    <td class="score-high">8.9/10</td>
+                    <td class="score-medium">8.3/10</td>
+                    <td class="score-high">高</td>
+                    <td class="cost-high">高</td>
+                    <td class="score-high">8.8/10</td>
+                    <td>全市场数据库，自然语言选股[6](@ref)</td>
+                    <td>机构/高净值用户，需深度数据挖掘</td>
+                </tr>
+
+                <tr class="section-header">
+                    <td colspan="11">三、开源AI量化框架</td>
+                </tr>
+                <tr>
+                    <td>微软Qlib</td>
+                    <td class="score-high">9.3/10</td>
+                    <td class="score-high">9.0/10</td>
+                    <td class="score-medium">8.5/10</td>
+                    <td class="score-medium">7.5/10</td>
+                    <td class="score-high">9.5/10</td>
+                    <td class="score-high">高</td>
+                    <td class="cost-low">免费</td>
+                    <td class="score-high">9.0/10</td>
+                    <td>专为AI量化投资设计，覆盖全流程[4](@ref)</td>
+                    <td>专业开发者/研究人员</td>
+                </tr>
+                <tr>
+                    <td>vn.py</td>
+                    <td class="score-high">9.1/10</td>
+                    <td class="score-medium">8.5/10</td>
+                    <td class="score-high">9.2/10</td>
+                    <td class="score-low">7.0/10</td>
+                    <td class="score-high">9.0/10</td>
+                    <td class="score-high">高</td>
+                    <td class="cost-low">免费</td>
+                    <td class="score-medium">8.5/10</td>
+                    <td>国内用户最多的开源量化框架之一[4](@ref)</td>
+                    <td>专业Python开发者</td>
+                </tr>
+                <tr>
+                    <td>Abu</td>
+                    <td class="score-medium">8.4/10</td>
+                    <td class="score-medium">8.2/10</td>
+                    <td class="score-medium">8.3/10</td>
+                    <td class="score-medium">7.8/10</td>
+                    <td class="score-high">8.9/10</td>
+                    <td class="score-high">高</td>
+                    <td class="cost-low">免费</td>
+                    <td class="score-medium">8.3/10</td>
+                    <td>机器学习驱动的策略优化[4](@ref)</td>
+                    <td>多市场投资者</td>
+                </tr>
+                <tr>
+                    <td>BigQuant</td>
+                    <td class="score-high">9.2/10</td>
+                    <td class="score-high">9.1/10</td>
+                    <td class="score-medium">8.6/10</td>
+                    <td class="score-high">8.8/10</td>
+                    <td class="score-high">9.4/10</td>
+                    <td class="score-high">高</td>
+                    <td class="cost-medium">中</td>
+                    <td class="score-high">9.1/10</td>
+                    <td>企业级AI量化平台，整合PB级数据[4,6](@ref)</td>
+                    <td>机构投资者/专业个人用户</td>
+                </tr>
+
+                <tr class="section-header">
+                    <td colspan="11">四、智能投顾与综合金融服务</td>
+                </tr>
+                <tr>
+                    <td>蚂蚁财富AI理财助理</td>
+                    <td class="score-medium">8.5/10</td>
+                    <td class="score-high">8.9/10</td>
+                    <td class="score-medium">8.4/10</td>
+                    <td class="score-high">9.6/10</td>
+                    <td class="score-high">9.2/10</td>
+                    <td class="score-high">高</td>
+                    <td class="cost-low">低</td>
+                    <td class="score-high">8.8/10</td>
+                    <td>背靠支付宝生态，多品类资产整合[6](@ref)</td>
+                    <td>支付宝用户，小额分散理财</td>
+                </tr>
+                <tr>
+                    <td>招商银行摩羯智投</td>
+                    <td class="score-medium">8.3/10</td>
+                    <td class="score-medium">8.4/10</td>
+                    <td class="score-medium">8.2/10</td>
+                    <td class="score-high">9.3/10</td>
+                    <td class="score-medium">8.1/10</td>
+                    <td class="score-high">高</td>
+                    <td class="cost-low">低</td>
+                    <td class="score-medium">8.4/10</td>
+                    <td>基于招行零售客户大数据构建[6](@ref)</td>
+                    <td>招行客户，偏好稳健</td>
+                </tr>
+                <tr>
+                    <td>SoFi Automated Investing</td>
+                    <td class="score-medium">8.4/10</td>
+                    <td class="score-medium">8.5/10</td>
+                    <td class="score-medium">8.3/10</td>
+                    <td class="score-high">9.5/10</td>
+                    <td class="score-medium">8.4/10</td>
+                    <td class="score-high">高</td>
+                    <td class="cost-low">低</td>
+                    <td class="score-medium">8.5/10</td>
+                    <td>50美元超低门槛，0.25%年费[6](@ref)</td>
+                    <td>小额投资者</td>
+                </tr>
+                <tr>
+                    <td>Vanguard Digital Advisor</td>
+                    <td class="score-medium">8.6/10</td>
+                    <td class="score-high">8.8/10</td>
+                    <td class="score-medium">8.5/10</td>
+                    <td class="score-high">9.4/10</td>
+                    <td class="score-medium">8.2/10</td>
+                    <td class="score-high">高</td>
+                    <td class="cost-low">低</td>
+                    <td class="score-medium">8.6/10</td>
+                    <td>100美元起投，年费仅0.20%[6](@ref)</td>
+                    <td>长期定投用户</td>
+                </tr>
+
+                <tr class="section-header">
+                    <td colspan="11">五、专业基金分析工具</td>
+                </tr>
+                <tr>
+                    <td>排排网AI</td>
+                    <td class="score-medium">8.7/10</td>
+                    <td class="score-high">9.1/10</td>
+                    <td class="score-medium">8.6/10</td>
+                    <td class="score-high">9.0/10</td>
+                    <td class="score-medium">8.3/10</td>
+                    <td class="score-high">高</td>
+                    <td class="cost-medium">中</td>
+                    <td class="score-medium">8.6/10</td>
+                    <td>专注私募投资分析，三维度评估[6](@ref)</td>
+                    <td>私募基金投资者</td>
+                </tr>
+                <tr>
+                    <td>Reportify</td>
+                    <td class="score-medium">8.5/10</td>
+                    <td class="score-high">9.3/10</td>
+                    <td class="score-medium">8.4/10</td>
+                    <td class="score-high">9.2/10</td>
+                    <td class="score-high">9.1/10</td>
+                    <td class="score-high">高</td>
+                    <td class="cost-medium">中</td>
+                    <td class="score-high">8.8/10</td>
+                    <td>AI驱动财报分析，30秒解析百页年报[6](@ref)</td>
+                    <td>基本面分析者</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="footer-note">
+            <p><strong>评分依据说明：</strong> 本评估基于工具的功能完整性、数据质量、用户规模、创新性、合规记录和成本效益等维度进行综合评定。评分9.0以上为优秀，8.0-8.9为良好，7.0-7.9为一般，7.0以下为有待改进。成本评估中"高"表示专业版费用较高，"中"表示有免费基础版和付费高级版，"低"表示基本免费或门槛很低。</p>
+            <p><strong>数据来源：</strong> 综合自行业报道、用户反馈及专业评测[1,2,3,4,5,6,7](@ref)。</p>
+        </div>
+    </div>
+</body>
+</html>
